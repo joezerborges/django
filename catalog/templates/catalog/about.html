@@ -1,0 +1,14 @@
+{% extends 'catalog/base.html' %}
+{% block title %}A livraria — Margem{% endblock %}
+{% block content %}
+<section class="container about-hero py-5">
+  <div class="row align-items-end g-4"><div class="col-lg-9"><p class="eyebrow"><span></span> UM POUCO SOBRE NÓS</p><h1>Uma livraria<br>com espaço <em>para respirar.</em></h1></div><div class="col-lg-3"><p class="about-side-note"><span>✳</span> Sem pressa, sem algoritmo. Só boas histórias e boas conversas.</p></div></div>
+</section>
+<section class="container about-body pb-5">
+  <div class="row align-items-center g-4 g-lg-5">
+    <div class="col-lg-6"><div class="about-image" role="img" aria-label="Estante de uma livraria independente"><div class="shelf shelf-one"><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="shelf shelf-two"><span></span><span></span><span></span><span></span><span></span></div><div class="shelf shelf-three"><span></span><span></span><span></span><span></span><span></span><span></span></div><span class="image-label">UM LUGAR PARA DEMORAR</span></div></div>
+    <div class="col-lg-6 about-copy"><p class="eyebrow">A IDEIA DA MARGEM</p><h2>O que importa<br>também mora <em>nas entrelinhas.</em></h2><p>A Margem nasceu da vontade de fazer diferente: menos prateleiras infinitas, mais tempo para cada escolha. Somos uma livraria independente de bairro, feita para quem gosta de conversar sobre o que leu — e sobre o que ainda vai ler.</p><p>Nossa estante muda aos poucos. Cada título entra porque alguém daqui leu, se encantou e pensou: “isso merece ser dividido”.</p><a class="btn btn-dark rounded-0 px-4 py-3 mt-2" href="{% url 'catalog:books' %}">Passeie pela estante <span>↗</span></a></div>
+  </div>
+</section>
+<div class="container about-signoff border-top py-3"><span>COM CALMA,</span><span>e uma página de cada vez.</span><span class="ms-auto">✳</span></div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'catalog/base.html' %}
+{% block title %}Margem — livros que ficam{% endblock %}
+{% block content %}
+<section class="container hero py-5">
+  <div class="row align-items-center g-4 g-lg-5">
+    <div class="col-lg-6 hero-copy py-lg-5">
+      <p class="eyebrow"><span></span> LIVRARIA INDEPENDENTE · SÃO PAULO</p>
+      <h1>Livros que<br>ficam <em>com você.</em></h1>
+      <p class="hero-description">Uma pequena seleção para quem gosta de descobrir histórias sem pressa. Entre, olhe à vontade, encontre a sua.</p>
+      <a class="btn btn-dark rounded-0 px-4 py-3" href="{% url 'catalog:books' %}">Conheça os livros <span>↗</span></a>
+      <p class="hero-footnote"><span>✳</span> Curadoria feita por gente que lê.</p>
+    </div>
+    <div class="col-lg-6">
+      <div class="hero-art" aria-label="Destaque da semana: Torto Arado">
+        <span class="art-stamp">LEITURA<br>DA CASA</span>
+        <img class="hero-cover" src="https://covers.openlibrary.org/b/isbn/{{ featured_book.isbn }}-L.jpg" alt="Capa de {{ featured_book.title }}" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+        <div class="cover-fallback hero-fallback" hidden><span class="fallback-kicker">MARGEM · LEITURA DA CASA</span><strong>{{ featured_book.title }}</strong><span class="fallback-author">{{ featured_book.author }}</span><span class="fallback-mark">✳</span></div>
+        <div class="art-caption"><span>01 / 03</span><span>{{ featured_book.title }} <i>— {{ featured_book.author }}</i></span></div>
+        <span class="art-scribble" aria-hidden="true">pra<br>guardar</span>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="container home-selection py-5 border-top">
+  <div class="row align-items-end g-3">
+    <div class="col-md"><p class="eyebrow">POUCOS, BONS, ESCOLHIDOS</p><h2>Uma estante pequena.<br><em>Um mundo inteiro.</em></h2></div>
+    <div class="col-md-auto"><a class="text-link" href="{% url 'catalog:books' %}">Ver os 3 livros <span>→</span></a></div>
+  </div>
+  <div class="selection-note mt-4 pt-3 border-top"><span>✳</span><p>Não temos mil opções. Temos três histórias que gostaríamos de dividir com você.</p></div>
+</section>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'catalog/base.html' %}
+{% block title %}Livros — Margem{% endblock %}
+{% block content %}
+<section class="container page-intro py-5">
+  <p class="eyebrow"><span></span> A ESTANTE</p>
+  <div class="row align-items-end g-4"><div class="col-lg-8"><h1>Três livros.<br><em>Muitas horas boas.</em></h1></div><p class="col-lg-4 page-lede mb-1">Uma seleção enxuta, escolhida com carinho. Cada livro daqui tem algo que continua com a gente depois da última página.</p></div>
+</section>
+<section class="container pb-5" aria-label="Catálogo de livros">
+  <div class="row g-4">
+    {% for book in books %}
+    <article class="col-md-6 col-lg-4 book-card">
+      <div class="book-image {{ book.color }}">
+        <span class="card-number">0{{ forloop.counter }}</span>
+        <img src="https://covers.openlibrary.org/b/isbn/{{ book.isbn }}-L.jpg" alt="Capa de {{ book.title }}" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+        <div class="cover-fallback {{ book.color }}" hidden><span class="fallback-kicker">MARGEM · SELEÇÃO DA CASA</span><strong>{{ book.title }}</strong><span class="fallback-author">{{ book.author }}</span><span class="fallback-mark">✳</span></div>
+      </div>
+      <div class="book-meta d-flex justify-content-between mt-3"><span>{{ book.category }}</span><span>{{ book.price }}</span></div>
+      <h2>{{ book.title }}</h2>
+      <p class="book-author">{{ book.author }}</p>
+      <p class="book-description">{{ book.description }}</p>
+      <a class="text-link card-link" href="https://www.google.com/search?q={{ book.title|urlencode }}+{{ book.author|urlencode }}" target="_blank" rel="noopener noreferrer">Encontrar este livro <span>↗</span></a>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+<div class="container catalog-tail border-top py-4"><span>✳</span><p>Uma estante pequena também pode levar longe.</p></div>
+{% endblock %}
